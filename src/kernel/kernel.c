@@ -28,5 +28,14 @@ void kernel_main() {
          * yet, '\n' will produce some VGA specific character instead.
          * This is normal.
          */
-	terminal_writestring("Hello, World!\nHello, World!\n");
+
+	char str1[] = "Hello, World! ";
+
+	char j[15];
+	for(size_t i = 0; i < 30; i++){
+		terminal_writestring(str1);
+		terminal_writestring(itoa(i,j));
+		terminal_putchar('\n');
+	}
+
 }
