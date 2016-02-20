@@ -4,7 +4,7 @@ SRC_PATH=src
 BOOTLOADER_PATH=$(SRC_PATH)/bootloader
 KERNEL_PATH=$(SRC_PATH)/kernel
 
-KERNEL_MODULES = color.o kernel.o term.o string.o
+KERNEL_MODULES = color.o kernel.o term.o string.o integer.o
 BUILD_LD = $(KERNEL_MODULES:%=$(BUILD_PATH)/%)
 
 all: prepare clean build run

@@ -4,6 +4,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include "term.h"
+#include "integer.h"
 
 /* Check if the compiler thinks we are targeting the wrong operating system. */
 #if defined(__linux__)
