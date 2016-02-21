@@ -16,7 +16,7 @@ boot.o:
 	#i686-elf-as boot.s -o boot.o
 	nasm -felf32 $(BOOTLOADER_PATH)/boot.asm -o $(BUILD_PATH)/boot.o
 
-%.o:
+%.o: $(KERNEL_PATH)/%.c
 	i686-elf-gcc -c $(KERNEL_PATH)/$*.c -o $(BUILD_PATH)/$*.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 build: boot.o $(KERNEL_MODULES)
