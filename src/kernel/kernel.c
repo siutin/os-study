@@ -14,7 +14,12 @@
 extern "C" /* Use C linkage for kernel_main. */
 #endif
 
+
 void kernel_main() {
+
+	// Initialise all the ISRs and segmentation
+	init_descriptor_tables();
+
 	/* Initialize terminal interface */
 	terminal_initialize();
 
@@ -23,13 +28,9 @@ void kernel_main() {
          * This is normal.
          */
 
-	char str1[] = "Hello, World! ";
-
-	char j[15];
-	for(size_t i = 0; i < 30; i++){
-		terminal_writestring(str1);
-		terminal_writestring(itoa(i,j));
-		terminal_putchar('\n');
-	}
+	terminal_writestring( "Hello, World!\n");
+	asm volatile("int $0x3");
+	asm volatile("int $0x4");
+	asm volatile("int $0x12");
 
 }

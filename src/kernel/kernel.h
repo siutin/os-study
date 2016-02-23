@@ -6,3 +6,4 @@
 
 #include "term.h"
 #include "integer.h"
+#include "descriptor_tables.h"
